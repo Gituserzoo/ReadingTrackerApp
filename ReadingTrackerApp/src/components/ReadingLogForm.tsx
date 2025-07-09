@@ -42,7 +42,9 @@ export default function ReadingLogForm({ user }: Props) {
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{ backgroundColor: 'rgba(255,255,255,0.85)', padding: '1rem', borderRadius: '8px' }}>
+    <form onSubmit={handleSubmit}
+       className="reading-form"
+       style={{ backgroundColor: 'rgba(255,255,255,0.85)', padding: '1rem', borderRadius: '8px' }}>
       <h2>Log Reading for {user}</h2>
 
       <div>
