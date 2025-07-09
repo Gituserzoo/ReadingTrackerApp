@@ -42,9 +42,7 @@ export default function ReadingLogForm({ user }: Props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}
-       className="reading-form"
-       style={{ backgroundColor: 'rgba(255,255,255,0.85)', padding: '1rem', borderRadius: '8px' }}>
+    <form onSubmit={handleSubmit} className="reading-form">
       <h2>Log Reading for {user}</h2>
 
       <div>
@@ -62,7 +60,7 @@ export default function ReadingLogForm({ user }: Props) {
         <input type="number" value={endPage} onChange={e => setEndPage(e.target.value)} required />
       </div>
 
-      <button type="submit" style={{ marginTop: '1rem' }}>Submit</button>
+      <button type="submit" className="reading-submit-button">Submit</button>
 
       {pagesRead > 0 && <p>You read {pagesRead} pages!</p>}
     </form>
