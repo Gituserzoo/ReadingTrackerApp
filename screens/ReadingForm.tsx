@@ -7,19 +7,34 @@ export default function ReadingForm() {
   const [book, setBook] = useState('');
   const [startPage, setStartPage] = useState('');
   const [endPage, setEndPage] = useState('');
-  const [date, setDate] = useState('');
 
   const handleSubmit = async () => {
-    const pagesRead = parseInt(endPage) - parseInt(startPage);
+    if (!user || !book || !startPage || !endPage) {
+      Alert.alert('Missing Field', 'Please fill in all fields.');
+      return;
+    }
+
+    const start = parseInt(startPage);
+    const end = parseInt(endPage);
+
+    if (isNaN(start) || isNaN(end) || end < start) {
+      Alert.alert('Invalid Page Numbers', 'Make sure page numbers are valid.');
+      return;
+    }
+
+    const pagesRead = end - start;
+
+    // Auto-fill current date as YYYY-MM-DD
+    const today = new Date().toISOString().split('T')[0];
 
     const { error } = await supabase.from('reading_logs').insert([
       {
         user,
         book,
-        start_page: parseInt(startPage),
-        end_page: parseInt(endPage),
+        start_page: start,
+        end_page: end,
         pages_read: pagesRead,
-        date,
+        date: today,
       },
     ]);
 
@@ -31,7 +46,6 @@ export default function ReadingForm() {
       setBook('');
       setStartPage('');
       setEndPage('');
-      setDate('');
     }
   };
 
@@ -44,13 +58,20 @@ export default function ReadingForm() {
       <TextInput style={styles.input} value={book} onChangeText={setBook} />
 
       <Text style={styles.label}>Start Page</Text>
-      <TextInput style={styles.input} value={startPage} onChangeText={setStartPage} keyboardType="numeric" />
+      <TextInput
+        style={styles.input}
+        value={startPage}
+        onChangeText={setStartPage}
+        keyboardType="numeric"
+      />
 
       <Text style={styles.label}>End Page</Text>
-      <TextInput style={styles.input} value={endPage} onChangeText={setEndPage} keyboardType="numeric" />
-
-      <Text style={styles.label}>Date</Text>
-      <TextInput style={styles.input} value={date} onChangeText={setDate} placeholder="YYYY-MM-DD" />
+      <TextInput
+        style={styles.input}
+        value={endPage}
+        onChangeText={setEndPage}
+        keyboardType="numeric"
+      />
 
       <Button title="Submit" onPress={handleSubmit} />
     </View>
