@@ -54,3 +54,39 @@ body, html {
   max-width: 500px;
   width: 100%;
 }
+
+/* ==== Mobile Fixes ==== */
+@media (max-width: 768px) {
+  nav a {
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+    text-align: center;
+  }
+
+  .reading-form {
+    width: 90%;
+    padding: 20px;
+    font-size: 18px;
+  }
+
+  .reading-form input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .reading-form h1, .reading-form h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .reading-form button,
+  .reading-form input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
