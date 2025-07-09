@@ -85,29 +85,32 @@ body, html {
 /* ==== Mobile Fixes ==== */
 @media (max-width: 768px) {
   nav a {
-    font-size: 18px;
-    padding: 10px;
+    font-size: 32px;
+    padding: 20px;
     display: block;
     text-align: center;
   }
 
   .reading-form {
-    width: 90%;
-    padding: 20px;
-
+    width: 95%;
+    padding: 30px;
+    background-color: rgba(255, 255, 0, 0.8); /* bright yellow for testing */
   }
 
   .reading-form input,
   .reading-form button {
     width: 100%;
-    padding: 14px;
-    font-size: 18px;
-    margin-bottom: 10px;
+    padding: 20px;
+    font-size: 24px;
+    margin-bottom: 15px;
+    background-color: lightblue; /* just for visibility */
   }
 
   .reading-form h2 {
-    font-size: 24px;
+    font-size: 32px;
     text-align: center;
+    color: red;
   }
 }
+
 
