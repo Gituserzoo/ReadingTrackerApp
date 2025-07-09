@@ -60,9 +60,10 @@ export default function ReadingLogForm({ user }: Props) {
         <input type="number" value={endPage} onChange={e => setEndPage(e.target.value)} required />
       </div>
 
-      <button type="submit" className="reading-submit-button">Submit</button>
+      <button type="submit">Submit</button>
 
       {pagesRead > 0 && <p>You read {pagesRead} pages!</p>}
     </form>
   );
 }
+

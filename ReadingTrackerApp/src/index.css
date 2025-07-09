@@ -59,12 +59,27 @@ body, html {
   background-color: rgba(255, 255, 255, 0.85);
   padding: 1rem;
   border-radius: 8px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-.reading-submit-button {
-  margin-top: 1rem;
+.reading-form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
+.reading-form button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.reading-form h2 {
+  text-align: center;
+}
 
 
 /* ==== Mobile Fixes ==== */
@@ -79,26 +94,20 @@ body, html {
   .reading-form {
     width: 90%;
     padding: 20px;
-    font-size: 18px;
+
   }
 
-  .reading-form input {
+  .reading-form input,
+  .reading-form button {
     width: 100%;
-    padding: 12px;
-    font-size: 16px;
+    padding: 14px;
+    font-size: 18px;
     margin-bottom: 10px;
   }
 
-  .reading-form h1, .reading-form h2 {
+  .reading-form h2 {
     font-size: 24px;
     text-align: center;
   }
-
-  .reading-form button,
-  .reading-form input[type="submit"] {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    margin-top: 10px;
-  }
 }
+
