@@ -4,6 +4,8 @@ import Genie from './pages/Genie';
 import Adam from './pages/Adam';
 import Stats from './pages/Stats';
 import Mountains from './pages/Mountains';
+import './index.css';
+
 
 export default function App() {
   return (
